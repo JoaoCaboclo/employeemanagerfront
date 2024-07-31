@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "employee-manager-app": {
+   "employee-manager-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,6 +26,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
             "outputPath": "dist/employee-manager-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -66,11 +71,14 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            }
+             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -100,6 +108,7 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []

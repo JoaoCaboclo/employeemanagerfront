@@ -1,0 +1,28 @@
+<!-- src/app/components/employee-form/employee-form.component.html -->
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" type="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="jobTitle">Job Title</label>
+    <input id="jobTitle" formControlName="jobTitle" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input id="phone" formControlName="phone" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="imageUrl">Image URL</label>
+    <input id="imageUrl" formControlName="imageUrl" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="employeeCode">Employee Code</label>
+    <input id="employeeCode" formControlName="employeeCode" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

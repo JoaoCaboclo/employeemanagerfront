@@ -1,0 +1,49 @@
+/**
+https://www.bootdey.com/snippets/view/color-contact-list#html
+*/
+
+
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+
+body {
+  background-color: #f7f7ff;
+  margin-top: 20px;
+}
+
+.btn-white {
+  background-color: #fff;
+  border-color: #e7eaf3;
+}
+
+.radius-15 {
+  border-radius: 15px;
+}
+
+.contacts-social a {
+  font-size: 16px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  background: #ffffff;
+  border: 1px solid #eeecec;
+  text-align: center;
+  border-radius: 50%;
+  color: #2b2a2a;
+}
+
+.bg-info {
+  background-color: #0dcaf0 !important;
+}
+
+.bg-primary {
+  background-color: #008cff !important;
+}
+
+.bg-danger {
+  background-color: #fd3550 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}

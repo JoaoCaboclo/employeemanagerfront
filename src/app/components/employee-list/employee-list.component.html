@@ -1,0 +1,32 @@
+<!-- src/app/components/employee-list/employee-list.component.html -->
+
+<p class=paragrafo1> Eu sou uma diretiva de atributo</p>
+
+<div class="container">
+
+  <div *ngIf="isLargeFont; else smallFont">
+    <h2 [ngStyle]="{'font-size': largeFontSize, 'color': largeFontColor}">Employee List</h2>
+  </div>
+  <ng-template #smallFont>
+    <h2 [ngStyle]="{'font-size': smallFontSize,'color': smallFontColor}">Employee List</h2>
+  </ng-template>
+
+  <h2 [ngStyle]="{'font-size': isLargeFont ? largeFontSize : smallFontSize,
+      'color': isLargeFont ? largeFontColor : smallFontColor}">
+    Employee List - usando operador ternário. sem ngIf
+  </h2>
+
+  <button class="btn btn-primary mb-3" (click)="onAdd()">Add Employee</button>
+  <button class="btn btn-success mb-3" (click)="generateReport()">Generate Report</button>
+  <ul class="list-group">
+    <li *ngFor="let employee of employees" class="list-group-item d-flex justify-content-between align-items-center">
+      {{ employee.name }}
+      <div>
+        <button class="btn btn-secondary btn-sm mr-2" (click)="onEdit(employee.id)">Edit</button>
+        <button class="btn btn-danger btn-sm" (click)="onDelete(employee.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+  <app-employee-detail *ngIf="selectedEmployee" [employee]="selectedEmployee"></app-employee-detail>
+</div>
